@@ -1,0 +1,12 @@
+Anuncio Parroquial!
+Tarea: Se debe realizar una calculado en JS, la misma debe pedir lo siguiente al usuario:
+-Numero 1
+-Numero 2
+-Operación a realizar
+
+Debe mostrar en un mensaje (elija si en consola o alerta) el resultado de la operación.
+
+Cosas a tener en cuenta:
+-No se puede dividir por 0, debe lanzar un error si lo intenta
+-Si ingresa una operacion que no sea +, -, * o / debe lanzar un error
+-Si quieren investigar, lanzar un error si en vez de numero ingresa letras
