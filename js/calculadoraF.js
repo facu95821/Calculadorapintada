@@ -30,7 +30,6 @@
 // alert("El resultado de tu operacion es: " + (multiplica1 * multiplica2));
 
 
-
  
 
 //  let numero1 = prompt("Ingrese un numero");
@@ -58,68 +57,64 @@
 //  alert("El resultado de la division es " + dividir);
 
 
-let operacion = prompt("¿Qué operación desea? +Suma -Resta *Multiplicacion /Division");
+//Calculadora pintada
 
-let operacion1 = parseInt(prompt("Escribe el primer numero:"));
+//  let operacion = prompt("¿Qué operación desea? +Suma -Resta *Multiplicacion /Division");
 
-let operacion2 = parseInt(prompt("Escribe el segundo numero:"));
+//  let operacion1 = parseInt(prompt("Escribe el primer numero:"));
 
-let resultado;
+//  let operacion2 = parseInt(prompt("Escribe el segundo numero:"));
 
- var letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'M', 'N',
- 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'W', 'X', 'Y', 'T'];
 
- function sumar(numero1, numero2){
- 	return numero1 + numero2;
+ var num1 = 0;
+ var num2 = 0;
+ var opera;
+
+function darNumero(numero){
+ if(num1==0){
+	 num1 = numero;
+ }else{
+	 num1 += numero;
  }
+ refrescar();
+}
 
- function restar(numero1, numero2){
- 	return numero1 - numero2;
+
+function operar(valor){
+ if (num1 == 0){
+	 num1 = parseFloat(document.getElementById("valor_numero").value);
+
+ }else{
+ 	(num2 = parseFloat(num1));
+ 	num1= 0;
+ 	opera = valor;
+}
+}
+
+function esIgual(){
+ num1 = parseFloat(num1);
+ switch (opera){
+	 case 1:
+		 num1 += num2;
+	 break;
+	 case 2:
+		 num1 = num2 - num1;
+	 break;
+	 case 3:
+		 num1 *= num2;
+	 break;
+	 case 4:
+		 num1 = num2 / num1;
+	 break;
  }
+ refrescar();
+ num2 = parseFloat(num1);
+ num1 = 0;
+}
 
- function multiplicar(numero1, numero2){
- 	return numero1 * numero2;
- }
-
- function dividir(numero1, numero2){
- 	if (numero1 == 0){
- 			alert("No se puede dividir por cero")
- 	}else{
- 		if (numero2 == 0){
- 			alert("No se puede dividir por cero")	
- 		}else{
- 			return numero1 / numero2
- 		}
-	}
- }
-
-
-
- switch (operacion){
- 	case "+":
- 		resultado = sumar(operacion1,operacion2);
-         alert("El resultado de tu operacion es: " + resultado);
- 		break;
-
- 	case "-":
-		resultado = restar(operacion1,operacion2);
- 		alert("El resultado de tu operacion es: " + resultado);
- 		break;
-
- 	case "*":
- 		resultado = multiplicar(operacion1,operacion2);
- 		alert("El resultado de tu operacion es: " + resultado);
- 		break;
-
- 	case "/":
- 		resultado = dividir(operacion1,operacion2);
- 		alert("El resultado de tu operacion es: " + resultado);
- 		break;
- 			default:
- 			alert("si no es +-*/ La opción no es correcta.");
- 			break;
- }
-
+function refrescar(){
+ document.getElementById("valor_numero").value = num1;
+}
      
 
  
